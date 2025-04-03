@@ -8,6 +8,14 @@ set PY_SCRIPT=main.py
 set VENV_DIR=venv
 set REQUIREMENTS=requirements.txt
 set DEFAULT_PY=python
+chcp 65001 > nul
+set PYTHONIOENCODING=utf-8
+set LC_ALL=ru_RU.UTF-8
+
+REM Установка совместимого шрифта (если доступно)
+reg add "HKCU\Console\%CD%start.bat" /v "FaceName" /t REG_SZ /d "Lucida Console" /f > nul 2>&1
+reg add "HKCU\Console\%CD%start.bat" /v "CodePage" /t REG_DWORD /d 65001 /f > nul 2>&1
+
 
 :: Проверка Python
 echo.
